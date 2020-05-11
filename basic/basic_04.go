@@ -45,4 +45,13 @@ func main() {
 	//fmt.Println(g+k)
 
 	fmt.Println("k+l", k+l)
+
+	var m int =11
+	n:=float64(m)
+	fmt.Println("n的类型",reflect.TypeOf(n))
+
+	//error
+	//var o string="666"
+	//p:=int(o)
+
 }
