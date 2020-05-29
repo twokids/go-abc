@@ -2,15 +2,15 @@ package main
 
 import "github.com/gin-gonic/gin"
 
-type HandlerFunc func(c *gin.Context) error
+type HandlerFunc1 func(c *gin.Context) error
 
-func wrapper(handler HandlerFunc) func(c *gin.Context) {
+func wrapper1(handler HandlerFunc1) func(c *gin.Context) {
 	return func(c *gin.Context) {
 		handler(c)
 	}
 }
 
-func user(c *gin.Context) error {
+func user1(c *gin.Context) error {
 	c.JSON(200, gin.H{
 		"message": "pong",
 	})
@@ -26,7 +26,7 @@ func main() {
 		})
 	})
 
-	r.GET("/ping", wrapper(user))
+	r.GET("/ping", wrapper1(user1))
 
 	r.Run() // 在 0.0.0.0:8080 上监听并服务
 }
